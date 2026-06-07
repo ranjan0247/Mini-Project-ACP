@@ -90,3 +90,14 @@ void redrawAll(){
 
     }
 }
+void listShapes(){
+    if(shapeCount==0){
+        printf("\n no shapes available\n");
+        return;
+    }
+    printf("\n stored shape\n");
+    for(int i=0;i<shapeCount;i++){
+        printf("index %d -Type=%d Row=%d col=%d width=%d Height=%d\n",i,shapeType[i],sRow[i],sCol[i],sW[i],sH[i]);
+    }
+
+}
