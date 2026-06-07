@@ -76,3 +76,17 @@ void drawCircle(int centerX,int centerY,int radius){
         }
     }
 }
+void redrawAll(){
+    clearCanvas();
+    for(int i=0;i<shapeCount;i++){
+        if(shapeType[i]==1)
+        drawLine(sRow[i],sCol[i],sW[i]);
+        else if(shapeType[i]==2)
+        drawRectangle(sRow[i],sCol[i],sW[i],sH[i]);
+        else if(shapeType[i]==3)
+        drawCircle(sRow[i],sCol[i],sW[i]);
+        else if(shapeType[i]==4)
+        drawTriangle(sRow[i],sCol[i],sW[i]);
+
+    }
+}
