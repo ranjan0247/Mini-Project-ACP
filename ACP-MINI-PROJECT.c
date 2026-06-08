@@ -101,3 +101,49 @@ void listShapes(){
     }
 
 }
+void addShape(){
+    printf("\n--- ADD SHAPE _\n");
+    printf("enter type(1-Line 2-Rectangle 3-Circle 4-Triangle):");
+    scanf("%d",&shapeType[shapeCount]);
+    printf("enter row col:");
+    scanf("%d%d",&sRow[shapeCount],&sCol[shapeCount]);
+    printf("enter width:");
+    scanf("%d",&sW[shapeCount]);
+    printf("enter height (0 if not needed):");
+    scanf("%d",&sH[shapeCount]);
+    shapeCount++;
+    redrawAll();
+    printf("shape Added\n");
+}
+void deleteShape(){
+    int index;
+    if(shapeCount==0){
+        printf("no shape available to delete.\n");
+        return;
+
+    }
+    listShapes();
+    printf("Enter Shape index to delete:");
+    scanf("%d",&index);
+    if(index<0 || index>=shapeCount){
+        printf("invalid index");
+        return;
+    }
+    for(int i=index;i<shapeCount-1;i++){
+        shapeType[i]=shapeType[i+1];
+        sRow[i]=sRow[i+1];
+        sCol[i]=sCol[i+1];
+        sW[i]=sW[i+1];
+        sH[i]=sH[i+1];
+    }
+    shapeCount--;
+    redrawAll();
+    printf("shape deleted\n");
+
+}
+void modifyShape(){
+    int index;
+    if(shapeCount==0){
+        printf("no shapes available to modified\n");
+        return;
+    }
