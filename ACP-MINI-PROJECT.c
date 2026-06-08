@@ -167,3 +167,18 @@ listShapes();
     printf("shape Modified\n");
 
 }
+void saveDrawing(){
+    FILE*fp=fopen("drawing.txt","w");
+    if(fp==NULL){
+        printf("error opening file\n");
+        return;
+    }
+    for(int i=0;i<30;i++){
+        for(int j=0;j<60;j++){
+            fputc(canvas[i][j],fp);
+        }
+        fputc('\n',fp);
+    }
+    fclose(fp);
+    printf("drawing saved to drawing.txt\n");
+}
