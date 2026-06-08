@@ -147,3 +147,23 @@ void modifyShape(){
         printf("no shapes available to modified\n");
         return;
     }
+listShapes();
+    printf("enter Shape index to modified");
+    scanf("%d",&index);
+    if(index<0 || index>=shapeCount){
+        printf("invalid index\n");
+        return;
+
+    }
+    printf("enter new type:");
+    scanf("%d",&shapeType[index]);
+    printf("enter new row col:");
+    scanf("%d%d",&sRow[index],&sCol[index]);
+    printf("new width");
+    scanf("%d",&sW[index]);
+    printf("enter new height");
+    scanf("%d",&sH[index]);
+    redrawAll();
+    printf("shape Modified\n");
+
+}
