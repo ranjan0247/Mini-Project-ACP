@@ -49,7 +49,6 @@ void drawRectangle(int row,int col,int width,int height){
     for(int i=0;i<width;i++){
         canvas[row][col+i]='*';
         canvas[row+height-1][col+i]='*';
-
     }
     for(int i=0;i<height;i++){
         canvas[row+i][col]='*';
@@ -72,7 +71,6 @@ void drawCircle(int centerX,int centerY,int radius){
             if(d>=radius*radius-radius && d<=radius*radius+radius){
                 canvas[i][j]='*';
             }
-
         }
     }
 }
@@ -87,7 +85,6 @@ void redrawAll(){
         drawCircle(sRow[i],sCol[i],sW[i]);
         else if(shapeType[i]==4)
         drawTriangle(sRow[i],sCol[i],sW[i]);
-
     }
 }
 void listShapes(){
@@ -99,7 +96,6 @@ void listShapes(){
     for(int i=0;i<shapeCount;i++){
         printf("index %d -Type=%d Row=%d col=%d width=%d Height=%d\n",i,shapeType[i],sRow[i],sCol[i],sW[i],sH[i]);
     }
-
 }
 void addShape(){
     printf("\n--- ADD SHAPE _\n");
@@ -120,7 +116,6 @@ void deleteShape(){
     if(shapeCount==0){
         printf("no shape available to delete.\n");
         return;
-
     }
     listShapes();
     printf("Enter Shape index to delete:");
@@ -139,7 +134,6 @@ void deleteShape(){
     shapeCount--;
     redrawAll();
     printf("shape deleted\n");
-
 }
 void modifyShape(){
     int index;
@@ -153,7 +147,6 @@ listShapes();
     if(index<0 || index>=shapeCount){
         printf("invalid index\n");
         return;
-
     }
     printf("enter new type:");
     scanf("%d",&shapeType[index]);
@@ -165,7 +158,6 @@ listShapes();
     scanf("%d",&sH[index]);
     redrawAll();
     printf("shape Modified\n");
-
 }
 void saveDrawing(){
     FILE*fp=fopen("drawing.txt","w");
