@@ -195,6 +195,9 @@ int main()
 {
    int choice;
    initializeCanvas();
+   printf("\n=================================================================\n");
+   printf("Project is made by Ranjan Ravindra Mamadapur SRN:R25EF212 CSE-D\n");
+   printf("=================================================================\n");
    do{
     printf("\n===== 2D Graphics Editor =====\n");
     printf("1 Add Shape\n");
@@ -203,8 +206,8 @@ int main()
     printf("4 Modify Shape\n");
     printf("5 Clear Canvas\n");
     printf("6 List Shapes\n");
-    printf("7 exit");
-    printf("8 save Drawing\n");
+    printf("7 Exit\n");
+    printf("8 Save Drawing\n");
     printf("9 Load Drawing\n");
     printf("Enter Choice\n");
     scanf("%d",&choice);
@@ -224,13 +227,15 @@ int main()
         case 5:
         clearCanvas();
         shapeCount=0;
-        printf("Canvas cleared\n");
+        printf("Canvas Cleared\n");
         break;
         case 6:
         listShapes();
         break;
         case 7:
-        printf("exiting program\n");
+        printf("\n=================================================================\n");
+        printf("  Thank you for using the 2D Graphics Editor! Exiting program...\n");
+        printf("=================================================================\n");
         break;
         case 8:
         saveDrawing();
@@ -239,11 +244,11 @@ int main()
         loadDrawing();
         break;
         default:
-        printf("invalid choice\n");
+        printf("Invalid Choice\n");
     }
    }
    while(choice!=7);
    return 0;
 }
 //run command in terminal to compile and execute the program
-//gcc ACP-MINI-PROJECT.c -o ACP-MINI-PROJECT && ./ACP-MINI-PROJECT
+//gcc ACP-MINI-PROJECT.c -o ACP-MINI-PROJECT_v2 && ./ACP-MINI-PROJECT_v2
