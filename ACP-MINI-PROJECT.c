@@ -174,3 +174,76 @@ void saveDrawing(){
     fclose(fp);
     printf("drawing saved to drawing.txt\n");
 }
+void loadDrawing(){
+    FILE*fp=fopen("drawing.txt","r");
+    if(fp==NULL){
+        printf("drawing.txt not found\n");
+        return;
+    }
+    for(int i=0;i<30;i++){
+        for(int j=0;j<60;j++){
+            canvas[i][j]=fgetc(fp);
+        }
+        fgetc(fp);
+    }
+    fclose(fp);
+    printf("drawing loaded from drawing.txt\n");
+
+}
+int main()
+
+{
+   int choice;
+   initializeCanvas();
+   do{
+    printf("\n===== 2D Graphics Editor =====\n");
+    printf("1 Add Shape\n");
+    printf("2 Display Canvas\n");
+    printf("3 Delete Shape\n");
+    printf("4 Modify Shape\n");
+    printf("5 Clear Canvas\n");
+    printf("6 List Shapes\n");
+    printf("7 exit");
+    printf("8 save Drawing\n");
+    printf("9 Load Drawing\n");
+    printf("Enter Choice\n");
+    scanf("%d",&choice);
+    switch(choice){
+        case 1:
+        addShape();
+        break;
+        case 2:
+        displayCanvas();
+        break;
+        case 3:
+        deleteShape();
+        break;
+        case 4:
+        modifyShape();
+        break;
+        case 5:
+        clearCanvas();
+        shapeCount=0;
+        printf("Canvas cleared\n");
+        break;
+        case 6:
+        listShapes();
+        break;
+        case 7:
+        printf("exiting program\n");
+        break;
+        case 8:
+        saveDrawing();
+        break;
+        case 9:
+        loadDrawing();
+        break;
+        default:
+        printf("invalid choice\n");
+    }
+   }
+   while(choice!=7);
+   return 0;
+}
+//run command in terminal to compile and execute the program
+//gcc ACP-MINI-PROJECT.c -o ACP-MINI-PROJECT && ./ACP-MINI-PROJECT
