@@ -250,5 +250,3 @@ int main()
    while(choice!=7);
    return 0;
 }
-//run command in terminal to compile and execute the program
-//gcc ACP-MINI-PROJECT.c -o ACP-MINI-PROJECT_v2 && ./ACP-MINI-PROJECT_v2
